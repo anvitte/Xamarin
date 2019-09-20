@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XamarinEssentials_FullDemo.Views.ContactsDetailsPage" Title="Contact Details Page">
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+        <ListView ItemsSource="{Binding LstContacts,Mode=TwoWay}" IsPullToRefreshEnabled="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout>
+                                    <Label Text="{Binding Name,Mode=TwoWay}"/>
+                                    <Label Text="{Binding PhoneNumber,Mode=TwoWay}"/>
+                                </StackLayout>
+                                <Image Source="dialericon.png" HorizontalOptions="EndAndExpand" HeightRequest="20" WidthRequest="20"/>
+                            </StackLayout>
+                            <BoxView HeightRequest="2" BackgroundColor="Blue" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+          
+            </ListView.ItemTemplate>
+            <ListView.Behaviors>
+                <b:EventToCommandBehavior EventName="ItemTapped" 
+                                      Command="{Binding ItemTappedCommand}"
+                                      EventArgsParameterPath="Item" />
+            </ListView.Behaviors>
+        </ListView>
+    </StackLayout>
+</ContentPage>

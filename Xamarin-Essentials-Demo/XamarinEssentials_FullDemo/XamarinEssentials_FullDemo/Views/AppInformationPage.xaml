@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XamarinEssentials_FullDemo.Views.AppInformationPage" Title="Application Information">
+    <StackLayout>
+
+        <Grid Margin="10,20,10,10" ColumnSpacing="5" RowSpacing="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Text="{Binding AppNameLabel }" />
+            <Label Grid.Row="0" Grid.Column="1" Text="{Binding AppName}" />
+            <Label Grid.Row="1" Grid.Column="0" Text="{Binding AppPackageNameLabel }" />
+            <Label Grid.Row="1" Grid.Column="1" Text="{Binding AppPackageName}" />
+            <Label Grid.Row="2" Grid.Column="0" Text="{Binding AppPackageVersionLabel}" />
+            <Label Grid.Row="2" Grid.Column="1" Text="{Binding AppPackageVersion}" />
+            <Label Grid.Row="3" Grid.Column="0" Text="{Binding AppBuildLabel}" />
+            <Label Grid.Row="3" Grid.Column="1" Text="{Binding AppBuild}" />
+            <Button Grid.Row="4" Grid.ColumnSpan="2" Command="{Binding ShowSettingUICommand}" Text="{Binding AppShowSettingUILabel}" />
+        </Grid>
+        
+    </StackLayout>
+</ContentPage>

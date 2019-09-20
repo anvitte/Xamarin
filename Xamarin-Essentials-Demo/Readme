@@ -1,0 +1,52 @@
+Xamarin Essentials
+
+Platform Support
+Xamarin.Essentials supports the following platforms and operating systems:
+Platform	Version
+Android	4.4 (API 19) or higher
+iOS	10.0 or higher
+UWP	10.0.16299.0 or higher
+
+Installation
+
+Add the NuGet Package Xamarin.Essential
+Add Initialization in all platform 
+•	Android 
+o	Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+•	iOS 
+o	Not Required
+•	UWP
+o	Not Required
+
+Reference - https://docs.microsoft.com/en-us/xamarin/essentials/app-information?context=xamarin%2Fxamarin-forms&tabs=android
+App Information
+
+Add the reference - > Using Xamarin.Essentials; in the class
+Add the following code to get the information
+
+
+// Application Name
+var appName = AppInfo.Name;
+
+// Package Name/Application Identifier (com.microsoft.testapp)
+var packageName = AppInfo.PackageName;
+
+// Application Version (1.0.0)
+var version = AppInfo.VersionString;
+
+// Application Build Number (1)
+var build = AppInfo.BuildString;
+ // Display settings page
+AppInfo.ShowSettingsUI();
+
+Connectivity
+
+Add Permission in particular platform
+Android –  In Assembly Info
+	[assembly: UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
+
+Or
+In Manifest
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+iOS – Not Required
+UWP – Not Required
