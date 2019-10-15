@@ -13,7 +13,7 @@ namespace XamarinEssentials_FullDemo.ViewModels
         public DelegateCommand NavigateToAppInfoPage { get; set; }
         public DelegateCommand NavigateToConnectivityInfoPage { get; set; }
         public DelegateCommand NavigationToFileSystemPage { get; set; }
-
+        public DelegateCommand NavigationToUnitConvertersPage { get; set; }
         //Navigation Service
         private  INavigationService _navigationService;
         public PrismMasterDetailPageViewModel(INavigationService navigationService)
@@ -27,6 +27,12 @@ namespace XamarinEssentials_FullDemo.ViewModels
             NavigateToAppInfoPage = new DelegateCommand(NavigateToAppInformationPage);
             NavigateToConnectivityInfoPage = new DelegateCommand(NavigateToConnectivityInformationPage);
             NavigationToFileSystemPage = new DelegateCommand(NavigateToFileSystemHelperPage);
+            NavigationToUnitConvertersPage = new DelegateCommand(NavigateToUnitConverterPage);
+        }
+
+        private void NavigateToUnitConverterPage()
+        {
+            _navigationService.NavigateAsync("NavigationPage/UnitConverterPage");
         }
 
         private void NavigateToFileSystemHelperPage()

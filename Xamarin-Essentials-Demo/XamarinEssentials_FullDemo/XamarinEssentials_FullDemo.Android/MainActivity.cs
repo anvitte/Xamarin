@@ -16,7 +16,7 @@ namespace XamarinEssentials_FullDemo.Droid
             ToolbarResource = Resource.Layout.Toolbar;
             Xamarin.Essentials.Platform.Init(this, bundle);
             base.OnCreate(bundle);
-
+           
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer()));
         }

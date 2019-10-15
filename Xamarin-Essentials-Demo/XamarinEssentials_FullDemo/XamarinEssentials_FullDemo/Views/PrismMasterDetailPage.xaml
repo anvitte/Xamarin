@@ -12,6 +12,7 @@
                 <Button Text="Application Information" Command="{Binding NavigateToAppInfoPage}" CommandParameter="AppInfo"  />
                 <Button Text="Check Connectivity" Command="{Binding NavigateToConnectivityInfoPage}" CommandParameter="ConnectvityInfo"  />
                 <Button Text="File System Helper" Command="{Binding NavigationToFileSystemPage}" CommandParameter="FileSystem"/>
+                <Button Text="Unit Converters" Command="{Binding NavigationToUnitConvertersPage}"/>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>

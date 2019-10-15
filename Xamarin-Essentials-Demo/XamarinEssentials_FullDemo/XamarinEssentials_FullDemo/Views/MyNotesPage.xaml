@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:prismBehavior="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XamarinEssentials_FullDemo.Views.MyNotesPage"
+             Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems >
+        <!--<ToolbarItem Text="Save" Order="Primary" />-->
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Margin="5,10,5,0">
+            <Frame  CornerRadius="10" HeightRequest="160" BackgroundColor="LightBlue">
+                <Editor TextChanged="Editor_TextChanged" Text="{Binding DefaultContent,Mode=TwoWay}"  HeightRequest="150" HorizontalOptions="FillAndExpand"/>
+               
+            </Frame>
+            <Button Text="Save" IsVisible="{Binding SaveItemButton}" Command="{Binding SaveExisitngNotes}"  CommandParameter="{Binding DefaultContent}"/>
+            <ScrollView>
+                <ListView  ItemTapped="ListView_ItemTapped"   ItemsSource="{Binding LstFilesNames,Mode=TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label VerticalTextAlignment="Center" FontSize="15" TextColor="Black" FontAttributes="Bold" Text="{Binding NoteName}"></Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                   </ListView>
+            </ScrollView>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

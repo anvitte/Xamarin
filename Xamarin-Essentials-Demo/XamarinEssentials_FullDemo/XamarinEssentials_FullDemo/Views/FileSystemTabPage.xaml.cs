@@ -7,8 +7,8 @@ namespace XamarinEssentials_FullDemo.Views
         public FileSystemTabPage()
         {
             InitializeComponent();
-            Children.Add(new NewContactPage());
-            Children.Add(new ContactsDetailsPage());
+            Children.Add(new MyNotesPage());
+          
         }
     }
 }

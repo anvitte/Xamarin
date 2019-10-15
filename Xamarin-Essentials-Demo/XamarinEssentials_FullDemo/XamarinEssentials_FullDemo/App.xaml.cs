@@ -40,10 +40,12 @@ namespace XamarinEssentials_FullDemo
             containerRegistry.RegisterForNavigation<FileSystemTabPage, FileSystemTabPageViewModel>();
             containerRegistry.RegisterForNavigation<NewContactPage, NewContactPageViewModel>();
             containerRegistry.RegisterForNavigation<ContactsDetailsPage, ContactsDetailsPageViewModel>();
-
+            containerRegistry.RegisterForNavigation<MyNotesPage, MyNotesPageViewModel>();
 
             //Services
             containerRegistry.RegisterSingleton<ILocalPhoneDB,PhoneLocalDB> ();
+
+            containerRegistry.RegisterForNavigation<UnitConverterPage, UnitConverterPageViewModel>();
         }
     }
 }
